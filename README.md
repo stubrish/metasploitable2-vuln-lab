@@ -37,4 +37,4 @@ This Nmap command is used to perform a detailed scan of the target machine to di
 
 ####  Reconnaissance Output   
 
-![Results](metasploitable2-vuln-lab/images/nmapScan.png)  
+![Results](images/nmapScan.png)  
