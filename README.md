@@ -38,3 +38,46 @@ This Nmap command is used to perform a detailed scan of the target machine to di
 ####  Reconnaissance Output   
 
 ![Results](images/nmapScan.png)  
+
+
+## Exploitation
+
+This section provides details and summaries of the exploits performed against various vulnerable services on the Metasploitable2 machine.
+
+---
+
+###  FTP (Port 21)
+
+- **Service**: vsftpd 2.3.4 (Very vulnerable FTP server)
+- **Exploit Discovery**: Used `msfconsole` to search for available Metasploit modules targeting vsftpd.
+  
+  ```bash
+  msf6 > search vsftpd
+
+---
+
+### Telnet (Port 23)
+
+- **Method**: Manual login brute-force
+- **Tool Used**: `hydra` with custom `userpass_file`
+- **Credentials Found**: `msfadmin:msfadmin`
+- **Result**: Shell access via Telnet
+
+---
+
+### SMB/Samba (Ports 139/445)
+
+- **Service**: Samba smbd 3.x
+- **Exploit Used**: `exploit/multi/samba/usermap_script`
+- **Payload**: `cmd/unix/reverse`
+- **Result**: Reverse shell as root
+- **Notes**: Vulnerable to usermap script command execution
+
+---
+
+### distccd (Port 3632)
+
+- **Exploit Used**: `exploit/unix/misc/distcc_exec`
+- **Payload**: `cmd/unix/reverse`
+- **Result**: Reverse shell as daemon user
+- **Notes**: Classic remote command execution via distcc service
