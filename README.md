@@ -34,3 +34,7 @@ This Nmap command is used to perform a detailed scan of the target machine to di
 - `-sS`: Performs a stealthy TCP SYN scan to quickly find open ports without completing the TCP handshake.  
 - `-p-`: Scans all 65,535 TCP ports instead of the default top 1,000 ports.  
 - `-T4`: Uses a faster timing template for quicker scan execution while maintaining accuracy.
+
+####  Reconnaissance Output   
+
+![Results](metasploitable2-vuln-lab/images/nmapScan.png)  
